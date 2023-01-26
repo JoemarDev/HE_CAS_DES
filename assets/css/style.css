@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #999999;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%);
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #1d1d1d;
+}
+
+#odometer {
+    color: #dac179;
+    font-size: 95px;
+    font-family: 'Bebas Neue', cursive !important;
+}
+
+#sign {
+    color: #dac179;
+    font-size: 95px;
+    font-family: 'Bebas Neue', cursive !important;
+    background: -webkit-linear-gradient(#ede7b0, #cfac43, #2c2207);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.odometer-value {
+    background: -webkit-linear-gradient(#ede7b0, #cfac43, #2c2207);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.owl-dot {
+    border: 2px solid #bc9045 !important;
+    border-radius: 100%;
+    opacity: 0.3;
+}
+
+.owl-dot.active {
+    background: 2px solid #bc9045 !important;
+    opacity: 1;
+}
+
+.owl-dot span {
+    background: #bc9045 !important;
+    height: 5px;
+    width: 5px;
+    display: block;
+    border-radius: 100%;
+    margin: 5px;
+}
+
+
+
+.owl-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    grid-gap: 10px;
+    margin-top: 15px;
+}
+
+.container {
+    max-width: 1260px !important;
+}
+
+.carousel-button-border {
+    border-image: none !important;
+    border: 1px solid #d4a65b;
+    ;
+}
+
+.navigation {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.input-1 {
+    width: 120px;
+    height: 40px;
+    background: #070707;
+    border: 1px solid #282828;
+    display: inline-block;
+    border-radius: 0;
+    margin-right: 10px;
+    font-size: 14px;
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+.input-1:focus {
+    outline: none;
+}
+
+.app-button {
+    width: 100px;
+    height: 40px;
+    border-radius: 0;
+    vertical-align: top;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #ffffff;
+}
+
+.button-1 {
+    background: #070707;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%) 1;
+    color: #ffffff;
+
+}
+
+.button-1:hover {
+    background-image: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%);
+    border: 0;
+    color: #000000;
+}
+
+
+.button-2 {
+    background-image: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%);
+    border: 0;
+    color: #000000;
+}
+
+.button-2:hover {
+    background: #070707;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%) 1;
+    color: #ffffff;
+}
+
+.menu-container {
+    height: 80px;
+}
+
+
+
+.menu-container li:hover {
+    color: #C1AD8B;
+}
+
+.banner-container {
+    background-image: url('../images/banner/main-banner.jpg');
+    height: 600px;
+}
+
+
+.jackpot-container {
+    border-image: linear-gradient(to bottom, #ffefa6 1%, #d4a65b 50%, #5b4128 100%) 1;
+    background: url('../images/game-button/jackpot-button.jpg')100% 100% no-repeat;
+    height: 160px;
+    transition: all .5s;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+
+}
+
+.jackpot-container {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    color: #fff;
+}
+
+.casino-container {
+    border-image: linear-gradient(to bottom, #ffefa6 1%, #d4a65b 50%, #5b4128 100%) 1;
+    background: url('../images/game-button/casino.jpg')100% 100% no-repeat;
+    height: 245px;
+    transition: all .5s;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+
+}
+
+.casino-container:hover {
+    background: url('../images/game-button/casino-active.jpg')100% 100% no-repeat;
+}
+
+.slot-container {
+    border-image: linear-gradient(to bottom, #ffefa6 1%, #d4a65b 50%, #5b4128 100%) 1;
+    background: url('../images/game-button/slot.jpg')100% 100% no-repeat;
+    height: 245px;
+    transition: all .5s;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+
+}
+
+.slot-container:hover {
+    background: url('../images/game-button/slot-active.jpg')100% 100% no-repeat;
+}
+
+
+
+.sports-container {
+    border-image: linear-gradient(to bottom, #ffefa6 1%, #d4a65b 50%, #5b4128 100%) 1;
+    background: url('../images/game-button/sports.jpg')100% 100% no-repeat;
+    height: 245px;
+    transition: all .5s;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+
+}
+
+.sports-container:hover {
+    background: url('../images/game-button/sports-active.jpg')100% 100% no-repeat;
+}
