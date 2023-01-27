@@ -3,13 +3,14 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
     color: #999999;
+    min-width: 1400px;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%);
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 10px;
     background-color: #1d1d1d;
 }
@@ -213,8 +214,6 @@ body::-webkit-scrollbar {
     background: url('../images/game-button/slot-active.jpg')100% 100% no-repeat;
 }
 
-
-
 .sports-container {
     border-image: linear-gradient(to bottom, #ffefa6 1%, #d4a65b 50%, #5b4128 100%) 1;
     background: url('../images/game-button/sports.jpg')100% 100% no-repeat;
@@ -230,4 +229,79 @@ body::-webkit-scrollbar {
 
 .sports-container:hover {
     background: url('../images/game-button/sports-active.jpg')100% 100% no-repeat;
+}
+
+.quick-links {
+    cursor: pointer;
+}
+
+.hov {
+    display: none;
+}
+
+.un-hov {
+    display: block;
+}
+
+.quick-links:hover .un-hov {
+    display: none;
+}
+
+.quick-links:hover .hov {
+    display: block;
+}
+
+
+.dialog-content {
+    width: 1000px;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.game-display {
+    position: relative;
+}
+
+.display-button {
+    width: 100%;
+    color: #fff;
+}
+
+.game-display:hover .display-overlay {
+    opacity: 1;
+    transition: 1s all;
+}
+
+.display-overlay {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dac179
+}
+
+
+.login-container {
+    width: 400px;
+}
+
+.login-container .header {
+    height: 60px;
+}
+
+.login-container .brand-header {
+    width: 209px;
+}
+
+.register-dialog-content input {
+    background: transparent;
+}
+
+.register-dialog-content input:focus {
+    outline: none;
 }

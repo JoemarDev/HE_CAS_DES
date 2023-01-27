@@ -13,12 +13,10 @@
     <script src="./assets/js/jquery-3.1.0.js"></script>
     <link rel="stylesheet" href="./assets/css/odometer-theme-default.css" />
 
-
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
     <script src="./assets/js/odometer.js"></script>
-
 
 </head>
 
@@ -34,7 +32,7 @@
                     <input type="text" class="input-1" placeholder="아이디">
                     <input type="text" class="input-1" placeholder="비밀번호">
                     <button class="app-button button-1">로그인</button>
-                    <button class="app-button button-2 mr-0">회원가입</button>
+                    <button class="app-button button-2 mr-0" onclick="OpenRegisterDialog()">회원가입</button>
                 </div>
             </div>
         </div>
@@ -47,17 +45,17 @@
             <div class="left-menus">
                 <ul class="flex gap-10 font-semibold text-sm">
                     <li class="cursor-pointer"><img src="./assets/images/icons/mobile.svg" alt=""></li>
-                    <li class="cursor-pointer">라이브 카지노</li>
-                    <li class="cursor-pointer">슬롯 게임</li>
-                    <li class="cursor-pointer">스포츠 배팅</li>
+                    <li onclick="OpenLoginDialog()" class="cursor-pointer">라이브 카지노</li>
+                    <li onclick="OpenLoginDialog()" class="cursor-pointer">슬롯 게임</li>
+                    <li onclick="OpenLoginDialog()" class="cursor-pointer">스포츠 배팅</li>
                 </ul>
             </div>
             <div class="right-menu">
                 <ul class="flex gap-10 font-semibold text-sm">
-                    <li class="cursor-pointer">프로모션</li>
-                    <li class="cursor-pointer">입금 신청</li>
-                    <li class="cursor-pointer">출금 신청</li>
-                    <li class="cursor-pointer">고객센터</li>
+                    <li onclick="OpenLoginDialog()" class="cursor-pointer">프로모션</li>
+                    <li onclick="OpenLoginDialog()" class="cursor-pointer">입금 신청</li>
+                    <li onclick="OpenLoginDialog()" class="cursor-pointer">출금 신청</li>
+                    <li onclick="OpenLoginDialog()" class="cursor-pointer">고객센터</li>
                 </ul>
             </div>
         </div>
@@ -89,29 +87,28 @@
 
     <!-- Content Section -->
     <div class="container mx-auto py-4">
-        <div class="jackpot-container">
+        <div class="jackpot-container" onclick="OpenSlotDialog()">
             <div class="text-center">
                 <h3 class="font-bold mt-10">PROGRESSIVE JACKPOT</h3>
                 <div class="flex items-between items-center gap-10 h-28 mb-2">
                     <h2 id="sign">KWR</h2>
                     <div id="odometer" class="odometer mt-3">50269923500.65</div>
                 </div>
-
             </div>
         </div>
-        <div class="casino-container relative">
+        <div class="casino-container relative" onclick="OpenCasinoDialog()">
             <div class="button-content flex absolute bottom-3 left-5 gap-2 items-center">
                 <h2 class="font-bold text-white hover:text-theme-3 text-xl">라이브 카지노</h2>
                 <span>세계 최고의 카지노 게임들을 만나보세요.</span>
             </div>
         </div>
-        <div class="slot-container">
+        <div class="slot-container" onclick="OpenSlotDialog()">
             <div class="button-content flex absolute bottom-3 left-5 gap-2 items-center">
                 <h2 class="font-bold text-white hover:text-theme-3 text-xl">슬롯 게임</h2>
                 <span>잭팟의 행운에 도전하세요!</span>
             </div>
         </div>
-        <div class="sports-container">
+        <div class="sports-container" onclick="OpenSportsDialog()">
             <div class="button-content flex absolute bottom-3 left-5 gap-2 items-center">
                 <h2 class="font-bold text-white hover:text-theme-3 text-xl">스포츠 배팅</h2>
                 <span>전 세계 모든 스포츠 경기들을 준비해두었습니다.</span>
@@ -119,7 +116,7 @@
         </div>
 
         <!-- Detail Information Section -->
-        <div class="grid grid-cols-3 bg-theme-2">
+        <div class="grid grid-cols-3 bg-theme-2 mb-2">
             <!-- Notice Lists Section -->
             <div class="notice-lists">
                 <div class="w-full">
@@ -166,6 +163,11 @@
                         <div class="col-span-5">루징 감사 쿠폰 미지급 사례 안내드립니다. [</div>
                         <div class="col-span-2 text-right">2022-10-01</div>
                     </div>
+                    <div
+                        class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                        <div class="col-span-5">쿠폰 / 입금보너스 규칙 (롤링 및 최대출금액</div>
+                        <div class="col-span-2 text-right">2022-10-01</div>
+                    </div>
 
                 </div>
             </div>
@@ -175,108 +177,175 @@
             <div class="deposit-lists border-x border-white/10">
                 <div class="p-4 flex justify-between">
                     <h2 class="text-xl font-bold text-theme-3">실시간 입금 현황</h2>
-                    <h2 class="text-xl font-bold text-theme-3">실시간 출금 현황</h2>
+                    <h2 class="text-xl font-bold text-white/50">실시간 출금 현황</h2>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">r_****2002</div>
+                    <div class="col-span-2 text-theme-3 text-right">500,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:40</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">h_****777</div>
+                    <div class="col-span-2 text-theme-3 text-right">70,000,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 22:33</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">r_****in89</div>
+                    <div class="col-span-2 text-theme-3 text-right">800,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:40</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">r_****bghks</div>
+                    <div class="col-span-2 text-theme-3 text-right">130,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:40</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">zy****</div>
+                    <div class="col-span-2 text-theme-3 text-right">200,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:40</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">sa****</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:39</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">oy****501</div>
+                    <div class="col-span-2 text-theme-3 text-right">400,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:38</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">hy****</div>
+                    <div class="col-span-2 text-theme-3 text-right">1,000,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:38</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
-                    <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
-                    <div class="col-span-2 text-right">2023-01-26 15:52</div>
+                    <div class="col-span-3">du****7</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:37</div>
                 </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">h_****777</div>
+                    <div class="col-span-2 text-theme-3 text-right">40,000,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-27 12:37</div>
+                </div>
+
 
             </div>
             <!-- Deposit Lists Section -->
 
             <!-- Withdrawal Lists Section -->
-            <div class="withdrawal-lists">
+            <div class="withdrawal-lists hidden">
                 <div class="p-4">
                     <h2 class="text-xl font-bold text-theme-3">주간 출금 TOP10</h2>
                 </div>
 
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
                 <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
                     <div class="col-span-3">an****ll1111</div>
-                    <div class="col-span-2 text-theme-3 text-rgith">100,000 원</div>
+                    <div class="col-span-2 text-theme-3 text-right">100,000 원</div>
                     <div class="col-span-2 text-right">2023-01-26 15:52</div>
                 </div>
+
+            </div>
+            <!-- Withdrawal Lists Section -->
+
+            <!-- Withdrawal Lists Section -->
+            <div class="top-transaction-lists">
+                <div class="p-4">
+                    <h2 class="text-xl font-bold text-theme-3">주간 출금 TOP10</h2>
+                </div>
+
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">Ky*****12</div>
+                    <div class="col-span-2 text-theme-3 text-right">99,250,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 16:21</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">sb****7</div>
+                    <div class="col-span-2 text-theme-3 text-right">75,300,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 20:39</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">h_****777</div>
+                    <div class="col-span-2 text-theme-3 text-right">70,450,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 22:39</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">h_****777</div>
+                    <div class="col-span-2 text-theme-3 text-right">70,000,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 22:33</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">h_****777</div>
+                    <div class="col-span-2 text-theme-3 text-right">65,000,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 00:47</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">sy****</div>
+                    <div class="col-span-2 text-theme-3 text-right">64,000,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-20 17:47</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">sy****</div>
+                    <div class="col-span-2 text-theme-3 text-right">63,000,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-20 03:10</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">h_****777</div>
+                    <div class="col-span-2 text-theme-3 text-right">62,450,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 22:39</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">h_****777</div>
+                    <div class="col-span-2 text-theme-3 text-right">60,450,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 22:39</div>
+                </div>
+                <div class="grid grid-cols-7 text-xs text-white  font-bold even:bg-theme-1/50 odd:bg-theme-2 p-4 py-3">
+                    <div class="col-span-3">h_****777</div>
+                    <div class="col-span-2 text-theme-3 text-right">54,450,000 원</div>
+                    <div class="col-span-2 text-right">2023-01-26 22:39</div>
+                </div>
+
 
             </div>
             <!-- Withdrawal Lists Section -->
@@ -285,11 +354,51 @@
 
         <!-- Body Menu Option -->
         <div class="body-option-menu">
-            <div class="grid grid-col-4">
-                <div class="menu-body-child"></div>
-                <div class="menu-body-child"></div>
-                <div class="menu-body-child"></div>
-                <div class="menu-body-child"></div>
+            <div class="grid grid-cols-4  bg-theme-2">
+                <div onclick="OpenLoginDialog()" class="menu-body-child hover:bg-theme-1/40 cursor-pointer  py-8">
+                    <div class="grid grid-cols-5 justify-center items-center border-r border-white/20">
+                        <div class="col-span-2">
+                            <img class="ml-auto mr-4" src="./assets/images/semi-footer-option/1.svg" alt="">
+                        </div>
+                        <div class="col-span-3 text-left">
+                            <label class="text-white block text-sm">파트너를 모십니다.</label>
+                            <h2 class="text-theme-3 font-bold text-xl">파트너 제휴 문의</h2>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="OpenLoginDialog()" class="menu-body-child hover:bg-theme-1/40 cursor-pointer  py-8">
+                    <div class="grid grid-cols-5 justify-center items-center border-r border-white/20">
+                        <div class="col-span-2">
+                            <img class="ml-auto mr-4" src="./assets/images/semi-footer-option/2.svg" alt="">
+                        </div>
+                        <div class="col-span-3 text-left">
+                            <label class="text-white block text-sm">궁금한 점이 있으세요?</label>
+                            <h2 class="text-theme-3 font-bold text-xl">자주 묻는 질문</h2>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="OpenLoginDialog()" class="menu-body-child hover:bg-theme-1/40 cursor-pointer  py-8">
+                    <div class="grid grid-cols-5 justify-center items-center border-r border-white/20">
+                        <div class="col-span-2">
+                            <img class="ml-auto mr-4" src="./assets/images/semi-footer-option/3.svg" alt="">
+                        </div>
+                        <div class="col-span-3 text-left">
+                            <label class="text-white block text-sm">365 게임문의</label>
+                            <h2 class="text-theme-3 font-bold text-xl">&nbsp; -</h2>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="OpenLoginDialog()" class="menu-body-child hover:bg-theme-1/40 cursor-pointer  py-8">
+                    <div class="grid grid-cols-5 justify-center items-center">
+                        <div class="col-span-2">
+                            <img class="ml-auto mr-4" src="./assets/images/semi-footer-option/4.svg" alt="">
+                        </div>
+                        <div class="col-span-3 text-left">
+                            <label class="text-white block text-sm">365 결제문의</label>
+                            <h2 class="text-theme-3 font-bold text-xl">&nbsp; -</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Body Menu Option -->
@@ -297,23 +406,162 @@
         <!-- Footer  -->
         <div class="footer">
             <!-- Footer Details -->
-            <div class="grid grid-cols-3 mb-5">
-                <div class="footer-box"></div>
-                <div class="footer-box"></div>
-                <div class="footer-box"></div>
+            <div class="grid grid-cols-3 mb-5 p-10 gap-5">
+                <div class="footer-box">
+                    <h2 class="text-theme-3 text-xl mb-5 font-bold">마이 페이지</h2>
+                    <div class="grid grid-cols-4 text-sm text-center">
+                        <div class="quick-links" onclick="OpenLoginDialog()">
+                            <img class="un-hov mb-2 mx-auto" src="./assets/images/quick-links/deposit-button.svg"
+                                alt="">
+                            <img class="hov mb-2 mx-auto" src="./assets/images/quick-links/deposit-button-hover.svg"
+                                alt="">
+                            입금 신청
+                        </div>
+                        <div class="quick-links" onclick="OpenLoginDialog()">
+                            <img class=" un-hov mb-2 mx-auto" src="./assets/images/quick-links/withdraw-button.svg"
+                                alt="">
+                            <img class="hov mb-2 mx-auto" src="./assets/images/quick-links/withdraw-button-hover.svg"
+                                alt="">
+                            입금 신청
+                        </div>
+                        <div class="quick-links" onclick="OpenLoginDialog()">
+                            <img class=" un-hov mb-2 mx-auto"
+                                src="./assets/images/quick-links/money-transfer-button.svg" alt="">
+                            <img class="hov mb-2 mx-auto"
+                                src="./assets/images/quick-links/money-transfer-button-hover.svg" alt="">
+                            입금 신청
+                        </div>
+                        <div class="quick-links" onclick="OpenLoginDialog()">
+                            <img class=" un-hov mb-2 mx-auto" src="./assets/images/quick-links/dm-button.svg" alt="">
+                            <img class="hov mb-2 mx-auto" src="./assets/images/quick-links/dm-button-hover.svg" alt="">
+                            입금 신청
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-box text-center">
+                    <img class="mx-auto mb-5" src="./assets/images/footer/logo-footer.svg" alt="">
+                    <p class="font-bold text-xs">©2022 • <span class="text-theme-3">Hera Casino</span> All Rights
+                        Reserved.</p>
+                </div>
+                <div class="footer-box">
+                    <h2 class="text-theme-3 text-xl mb-5 font-bold">QUICK SERVICE</h2>
+                    <ul class="links text-sm font-bold mb-5">
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 에볼루션</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 마이크로게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 아시아게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 플레이테크</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 게임플레이</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 비비아이엔</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 프라그마틱플레이</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 오리엔탈게임</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 올벳</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 빅게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 섹시게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 비보게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> WM게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 씨큐나인 야싱</li>
+                    </ul>
+                    <div class="clear-both mb-5"></div>
+                    <ul class="links text-sm font-bold">
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 프라그마틱플레이</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 플레이앤고</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 하바네로</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 씨큐나인게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 넷엔트</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 퀵스핀</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 부운고</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 마이크로게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 아시아게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 게임플레이</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 비비아이엔</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 벳소프트</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 포켓게임스</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 탑트렌드게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 스페이드게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 레드타이거</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 스카이윈드</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 이그드라실</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 플레이손</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 블루프린트</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 드래곤게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 드림테크</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 에보플레이</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 리얼타임게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 비비테크</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 스피노미널</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 톰혼</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 만칼라게이밍</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 넥스트스핀</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 메가7</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 마나플레이</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 아스펙트게이밍</li>
+
+                    </ul>
+                    <div class="clear-both mb-5"></div>
+                    <ul class="links text-sm font-bold mb-5">
+                        <li class="float-left px-2 my-1 border-r border-white/20"> 10BET</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> PINNACLE</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> IBC</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> SBO BET</li>
+                        <li class="float-left px-2 my-1 border-r border-white/20"> BETCONSTRUCT</li>
+                    </ul>
+                </div>
             </div>
             <!-- Footer Details -->
 
             <!-- Footer Partner Box -->
-            <div class="footer-partners">
+            <div class="footer-partners mb-10">
                 <div class="grid grid-cols-10">
+                    <div class="partner-box"><img src="./assets/images/partners/1.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/2.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/3.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/4.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/5.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/6.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/7.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/8.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/9.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/10.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/11.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/12.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/13.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/14.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/15.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/16.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/17.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/18.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/19.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/20.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/21.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/22.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/23.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/24.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/25.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/26.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/27.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/28.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/29.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/30.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/31.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/32.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/33.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/34.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/35.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/36.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/37.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/38.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/39.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/40.png" alt=""></div>
                     <div class="partner-box"></div>
                     <div class="partner-box"></div>
-                    <div class="partner-box"></div>
-                    <div class="partner-box"></div>
-                    <div class="partner-box"></div>
-                    <div class="partner-box"></div>
-                    <div class="partner-box"></div>
+                    <div class="partner-box"><img src="./assets/images/partners/41.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/42.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/43.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/44.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/45.png" alt=""></div>
+                    <div class="partner-box"><img src="./assets/images/partners/46.png" alt=""></div>
+
+
                 </div>
             </div>
             <!-- Footer Partner Box -->
@@ -322,6 +570,647 @@
 
     </div>
     <!-- Content Section -->
+
+
+    <!-- GAME DIALOG CONTENT -->
+    <div class="GAME_DIALOG z-30 hidden">
+        <div class="z-50 w-full h-screen fixed left-0 top-0 flex items-center justify-center bg-theme-1/50">
+            <div class="dialog-content bg-theme-2 border border-white/20 rounded-lg">
+                <div class=" p-5  dialog-tabs grid grid-cols-12 w-full gap-2 top-0 sticky z-20 bg-theme-2">
+                    <div class="col-span-11">
+                        <div class=" grid grid-cols-9 gap-2">
+                            <button onclick="OpenCasinoDialog()"
+                                class="casino-tab-btn tab-dialog-btn col-span-3 button-2 app-button w-full">라이브
+                                카지노</button>
+                            <button onclick="OpenSlotDialog()"
+                                class="slot-tab-btn tab-dialog-btn col-span-3 button-1 app-button w-full">라이브
+                                카지노</button>
+                            <button onclick="OpenSportsDialog()"
+                                class="sports-tab-btn tab-dialog-btn col-span-3 button-1 app-button w-full">라이브
+                                카지노</button>
+                        </div>
+                    </div>
+                    <div class="col-span-1">
+                        <button class="col-span-1 button-1 app-button w-full" onclick="CloseDialog()">X</button>
+                    </div>
+                </div>
+                <div class="casino-tab-box tab-box hidden">
+                    <div class=" grid grid-cols-5 gap-4 py-4   p-5 ">
+                        <div class="game-display">
+                            <img src="./assets/images/casino/1.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">에볼루션</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/2.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">마이크로게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/3.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">아시아게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/4.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">플레이테크</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/5.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">게임플레이</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/6.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">비비아이엔</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/7.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">프라그마틱플레이</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/8.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">오리엔탈게임</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/9.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">올벳</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/10.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">빅게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/11.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">섹시게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/12.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">비보게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/13.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">WM게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/casino/14.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">씨큐나인 야싱</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="slot-tab-box tab-box hidden">
+                    <div class="grid grid-cols-5 gap-4 py-4  p-5 ">
+                        <div class="game-display">
+                            <img src="./assets/images/slot/1.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">프라그마틱플레이</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/2.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">플레이앤고</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/3.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">하바네로</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/4.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">씨큐나인게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/5.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">넷엔트</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/6.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">퀵스핀</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/7.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">부운고</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/8.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">마이크로게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/9.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">아시아게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/10.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">플레이테크</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/11.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 게임플레이</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/12.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 비비아이엔</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/13.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 벳소프트</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/14.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 포켓게임스</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/15.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 탑트렌드게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/16.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 스페이드게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/17.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 레드타이거</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/18.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 스카이윈드</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/19.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 이그드라실</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/20.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 플레이손</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/21.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 블루프린트</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/22.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 드래곤게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/23.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 드림테크</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/24.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 에보플레이</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/25.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 리얼타임게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/26.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 비비테크</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/27.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 스피노미널</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/28.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 톰혼</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/29.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 만칼라게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/30.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 넥스트스핀</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+
+                        <div class="game-display">
+                            <img src="./assets/images/slot/31.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 씨큐나인 야싱</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+
+                        <div class="game-display">
+                            <img src="./assets/images/slot/32.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 메가7</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/33.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50"> 마나플레이</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/slot/34.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">아스펙트게이밍</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="sports-tab-box tab-box hidden">
+                    <div class=" grid grid-cols-5 gap-4 py-4   p-5 ">
+                        <div class="game-display">
+                            <img src="./assets/images/sports/1.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">10BET</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/sports/2.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">PINNACLE</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/sports/3.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">IBC</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/sports/4.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">SBO BET</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+                        <div class="game-display">
+                            <img src="./assets/images/sports/5.jpg" alt="">
+                            <button class="display-button p-2 bg-theme-1/50">BETCONSTRUCT</button>
+                            <div class="display-overlay bg-theme-1/50">
+                                <button class="app-button button-1" onclick="OpenLoginDialog()">시작하기</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- GAME DIALOG CONTENT -->
+
+    <!-- LOGIN DIGALOG CONTENT -->
+    <div class="LOGIN_DIALOG z-40 hidden">
+        <div class="z-50 w-full h-screen fixed left-0 top-0 flex items-center justify-center bg-theme-1/50">
+            <div class="login-container bg-theme-2 border-white/20 border">
+                <div class="header bg-theme-1 text-center flex items-center relative">
+                    <img class="brand-header mx-auto" src="./assets/images/brand/logo.svg" alt="">
+                    <button onclick="CloseLoginDialog()" class="absolute right-5 top-5"><img
+                            src="./assets/images/icons/close.svg" alt=""></button>
+                </div>
+
+                <div class="app-form mx-auto" style="width: 70%;">
+                    <div class="text-center my-5 text-white font-bold">
+                        <h2>로그인 후 이용 가능합니다.</h2>
+                    </div>
+                    <div class="grid grid-cols-6 mb-2 bg-theme-4  items-center bg-theme-1">
+                        <div class="col-span-1 border-r border-theme-2">
+                            <img class="mx-auto" src="./assets/images/icons/user.svg" alt="">
+                        </div>
+                        <div class="col-span-5 px-2">
+                            <input type="text" placeholder="아이디"
+                                class="text-sm input-1  bg-transparent  border-0 w-full">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-6 mb-2 bg-theme-4  mb-5 bg-theme-1 items-center">
+                        <div class="col-span-1 border-r border-theme-2">
+                            <img class="mx-auto" src="./assets/images/icons/lock.svg" alt="">
+                        </div>
+                        <div class="col-span-5 px-2">
+                            <input autocomplete="new-password" type="password" placeholder="비밀번호"
+                                class="text-sm input-1 bg-transparent  border-0 w-full">
+                        </div>
+                    </div>
+                    <div class="text-center my-5 text-white font-bold">
+                        <button style="height: 40px" class=" w-full submit-btn button-1">로그인</button>
+                    </div>
+                    <div onclick="OpenRegisterDialog()"
+                        class="text-center my-5 text-white font-bold text-xs hover:text-theme-3 cursor-pointer">
+                        <h2>아직 계정이 없으신가요?</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LOGIN DIGALOG CONTENT -->
+
+    <!-- REGISTER DIALOG CONTENT -->
+    <div class="REGISTER_DIALOG hidden z-50 relative">
+        <div class="h-screen w-full fixed left-0 top-0 bg-theme-1/50 z-10 flex items-center justify-center">
+            <div class="login-dialog bg-theme-2 ">
+                <div class="header bg-theme-1 text-center flex items-center relative py-2">
+                    <img class="brand-header mx-auto" src="./assets/images/brand/logo.svg" alt="">
+                    <button onclick="CloseRegisterDialog()" class="absolute right-5 top-5"><img
+                            src="./assets/images/icons/close.svg" alt=""></button>
+                </div>
+
+                <div class="register-dialog-content p-5" style="max-height: 88vh; overflow-y: scroll;">
+                    <form action="" class="mb-5 text-white">
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">아이디 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">아이디는 4-16자리 입니다</div>
+                        </div>
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">비밀번호 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">패스워드는 6-16 자리 입니다</div>
+                        </div>
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">비밀번호 재입력 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50"></div>
+                        </div>
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">이름 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">이름은 한글 2-5 자리 입니다</div>
+                        </div>
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">전화번호 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0" placeholder="'-' 없이 숫자만 입력">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">
+                                <button class="sms button-1 app-button">핸드폰인증</button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">은행명 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+
+                                <select class="text-white  w-full input-1 form-control ng-pristine ng-valid ng-touched"
+                                    ng-model="signForm.BankNo">
+                                    <option value="" selected="selected" ng-bind="'Please Select a Bank' | translate"
+                                        class="ng-binding">은행을 선택해주세요
+                                    </option>
+                                    <option value="1">SC제일은행</option>
+                                    <option value="2">경남은행</option>
+                                    <option value="3">광주은행</option>
+                                    <option value="4">국민은행</option>
+                                    <option value="27">신한은행</option>
+                                    <option value="6">기업은행</option>
+                                    <option value="7">농협중앙회</option>
+                                    <option value="8">농협회원조합</option>
+                                    <option value="9">대구은행</option>
+                                    <option value="10">대신증권</option>
+                                    <option value="11">대우증권</option>
+                                    <option value="12">동부증권</option>
+                                    <option value="13">동양종합금융증권</option>
+                                    <option value="14">메리츠증권</option>
+                                    <option value="15">미래에셋증권</option>
+                                    <option value="16">뱅크오브아메리카(BOA)</option>
+                                    <option value="17">부국증권</option>
+                                    <option value="18">부산은행</option>
+                                    <option value="19">산림조합중앙회</option>
+                                    <option value="20">산업은행</option>
+                                    <option value="21">삼성증권</option>
+                                    <option value="22">상호신용금고</option>
+                                    <option value="23">새마을금고</option>
+                                    <option value="24">수출입은행</option>
+                                    <option value="25">수협중앙회</option>
+                                    <option value="26">신영증권</option>
+                                    <option value="5">신한금융투자</option>
+                                    <option value="28">신협중앙회</option>
+                                    <option value="29">에스케이증권</option>
+                                    <option value="30">에이치엠씨투자증권</option>
+                                    <option value="31">엔에이치투자증권</option>
+                                    <option value="32">엘아이지투자증권</option>
+                                    <option value="33">외환은행</option>
+                                    <option value="34">우리은행</option>
+                                    <option value="35">우리투자증권</option>
+                                    <option value="36">우체국</option>
+                                    <option value="37">유진투자증권</option>
+                                    <option value="38">전북은행</option>
+                                    <option value="39">제주은행</option>
+                                    <option value="40">키움증권</option>
+                                    <option value="41">하나대투증권</option>
+                                    <option value="42">하나은행</option>
+                                    <option value="43">하이투자증권</option>
+                                    <option value="44">한국씨티은행</option>
+                                    <option value="45">한국투자증권</option>
+                                    <option value="46">한화증권</option>
+                                    <option value="47">KB(구현대)증권</option>
+                                    <option value="49">홍콩상하이은행</option>
+                                    <option value="53">카카오뱅크</option>
+                                    <option value="54">케이뱅크</option>
+                                    <option value="56">토스뱅크</option>
+                                    <option value="57">토스증권</option>
+                                </select>
+
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">계좌번호 <span class="text-red-500">*</span></div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0" placeholder="계좌번호">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">
+
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-8 gap-2 items-center mb-4">
+                            <div class="col-span-2 text-right">추천인</div>
+                            <div class="col-span-3 pl-2">
+                                <div class="input-1 flex items-center  w-full font-semibold">
+                                    <input type="text" class=" mx-0" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-span-3 text-left text-sm text-white/50">
+                                ID가 없으시면 비워두셔도 됩니다.
+                            </div>
+                        </div>
+
+
+
+                    </form>
+                    <div class="signup-info mb-5">
+                        <ul class="border-theme-3 text-theme-3 border p-5 text-sm">
+                            <li>타명의 가입시 사유 불문 승인 거부되실 수 있습니다.</li>
+                            <li>본인이 등록한 계좌로만 입금이 가능합니다.</li>
+                            <li>가입신청하신후 승인 전화를 꼭 받아주세요.</li>
+                            <li>무단으로 중복가입 시 사전 통보없이 등급 강등, 차단 되실 수 있습니다.</li>
+                            <li>미성년자는 승인시 가입이 거부됩니다.</li>
+                            <li>가입자명과 예금주 반드시 일치해야합니다.</li>
+                            <li>보안을 위해 입금계좌는 자주 변경됩니다. 항상 입금계좌 확인 후 입금 부탁드립니다.</li>
+                            <li>1:1 전용계좌 서비스도 이용이 가능하니 고객센터에 문의해주세요 *</li>
+                        </ul>
+                    </div>
+
+                    <button style="height: 40px" class=" w-full submit-btn button-1">회원가입</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- REGISTER DIALOG CONTENT -->
+
+
 </body>
 <script src="./assets/js/script.js"></script>
 
