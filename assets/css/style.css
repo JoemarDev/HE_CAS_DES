@@ -15,6 +15,20 @@ body {
     background-color: #1d1d1d;
 }
 
+
+
+.UserIsMember {
+    display: none;
+}
+
+.UserIsGuess {
+    display: block;
+}
+
+input:focus {
+    outline: none;
+}
+
 #odometer {
     color: #dac179;
     font-size: 95px;
@@ -125,14 +139,16 @@ body {
 
 .button-1:hover {
     background-image: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%);
-    border: 0;
+    /* border: 0; */
+    border-color: transparent;
     color: #000000;
 }
 
 
 .button-2 {
     background-image: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%);
-    border: 0;
+    border-width: 1px;
+    border-image: linear-gradient(to bottom, #ffefa6 0%, #d4a65b 50%, #5b4128 100%) 1;
     color: #000000;
 }
 
@@ -304,4 +320,86 @@ body {
 
 .register-dialog-content input:focus {
     outline: none;
+}
+
+
+
+
+.dialog-table {
+    width: 100%;
+    color: #fff;
+}
+
+.dialog-table .content {
+    width: 70%;
+}
+
+.dialog-table thead th {
+    background: #282828;
+    padding: 10px;
+    color: #fff;
+}
+
+.dialog-table td {
+    padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.content_dialog_page {
+    text-align: center;
+    color: #fff;
+}
+
+.content_dialog_page ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.content_dialog_page li {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 12px;
+    border: 1px solid #333
+}
+
+.content_dialog_page li.active {
+    background: #ad8734;
+    border: 1px solid #ad8734
+}
+
+.tab-active {
+    border-bottom: 2px solid #ad8734
+}
+
+.pag-dialog::-webkit-scrollbar {
+    display: none;
+}
+
+.dialog-tabs {
+    cursor: pointer;
+
+}
+
+.dialog-tabs:hover {
+    color: #ad8734;
+}
+
+
+.login-dialog-header {
+    background: #000;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-dialog-header img {
+    height: 30px;
 }
